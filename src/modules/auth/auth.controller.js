@@ -19,8 +19,7 @@ export async function register(req, res, next) {
   try {
     const { user, accessToken, refreshToken } = await registerUser(
       req.validatedBody
-    );
-    // console.log('user insert date log',user, accessToken, refreshToken);
+    ); 
     
     res.cookie('refreshToken', refreshToken, cookieOptions);
     res.status(201).json({ user, accessToken });

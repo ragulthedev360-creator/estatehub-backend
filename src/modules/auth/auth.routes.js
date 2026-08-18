@@ -13,10 +13,7 @@ const authLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-// router.post('/register', authLimiter, validate(registerSchema), register);
-// router.post('/login', authLimiter, validate(loginSchema), login);
-// router.post('/refresh', refresh);
-// router.post('/logout', logout);
+
 
 
 /**

@@ -79,8 +79,7 @@ export async function refreshSession(rawToken) {
     throw new AuthError('Invalid refresh token', 401);
   }
 
-  if (row.revoked) {
-    // Reuse of a revoked token — treat as compromised, revoke entire session family
+  if (row.revoked) { 
     await pool.query('UPDATE refresh_tokens SET revoked = true WHERE user_id = $1', [
       row.user_id,
     ]);
@@ -90,8 +89,7 @@ export async function refreshSession(rawToken) {
   if (new Date(row.expires_at) < new Date()) {
     throw new AuthError('Refresh token expired', 401);
   }
-
-  // Rotate: revoke the used token, issue a new one
+ 
   await pool.query('UPDATE refresh_tokens SET revoked = true WHERE id = $1', [
     row.id,
   ]);

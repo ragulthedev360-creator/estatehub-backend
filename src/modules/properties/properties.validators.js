@@ -38,7 +38,7 @@ export const searchQuerySchema = z.object({
   minPrice: z.coerce.number().nonnegative().optional(),
   maxPrice: z.coerce.number().positive().optional(),
   bedrooms: z.coerce.number().int().min(0).max(20).optional(),
-  q: z.string().trim().max(200).optional(), // free-text search
+  q: z.string().trim().max(200).optional(),  
   sort: z
     .enum(['newest', 'price_asc', 'price_desc'])
     .optional()

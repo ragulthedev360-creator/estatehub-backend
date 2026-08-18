@@ -3,7 +3,7 @@ import path from 'path';
 import crypto from 'crypto';
 
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB per image
+const MAX_FILE_SIZE = 5 * 1024 * 1024;  
 const MAX_FILES = 8;
 
 const storage = multer.diskStorage({

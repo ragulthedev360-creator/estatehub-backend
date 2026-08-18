@@ -9,7 +9,7 @@ export const createInquirySchema = z.object({
     .optional()
     .or(z.literal('')),
   message: z.string().max(1000).optional().or(z.literal('')),
-  website: z.string().optional(), // honeypot — checked manually in controller, not enforced here
+  website: z.string().optional(),  
 });
 
 export function validate(schema) {

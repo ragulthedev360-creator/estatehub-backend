@@ -1,8 +1,7 @@
 import { createInquiry, listInquiriesForOwner } from './inquiries.service.js';
 
 export async function create(req, res, next) {
-  try {
-    // Honeypot check — real users never fill this hidden field, bots often do
+  try { 
     if (req.validatedBody.website) {
       return res.status(400).json({ message: 'Spam detected' });
     }

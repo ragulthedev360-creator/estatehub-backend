@@ -72,8 +72,7 @@ export async function remove(req, res, next) {
 
 export async function searchlist(req, res, next) {
   try {
-    const result = await searchProperties(req.validatedQuery);
-    console.log('req.validatedQuery-----',req.validatedQuery);
+    const result = await searchProperties(req.validatedQuery); 
     
     res.status(200).json(result);
   } catch (err) {
